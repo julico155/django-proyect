@@ -1,0 +1,7 @@
+<h1>Eliminar Animal</h1>
+<p>¿Estás seguro de que deseas eliminar a {{ animal.nombre }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+</form>
+<a href="{% url 'listar_animales' %}">Cancelar</a>

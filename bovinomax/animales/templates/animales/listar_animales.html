@@ -1,0 +1,11 @@
+<h1>Lista de Animales</h1>
+<a href="{% url 'crear_animal' %}">Agregar Animal</a>
+<ul>
+    {% for animal in animales %}
+        <li>
+            {{ animal.nombre }} - {{ animal.especie }}
+            <a href="{% url 'editar_animal' animal.id %}">Editar</a>
+            <a href="{% url 'eliminar_animal' animal.id %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
