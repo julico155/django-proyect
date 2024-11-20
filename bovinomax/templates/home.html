@@ -1,22 +1,76 @@
-<!-- bovinomax/templates/home.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>BovinoMax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.pexels.com/photos/5531547/pexels-photo-5531547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* Asegura que el texto sea visible sobre la imagen */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(32, 29, 29, 0.7); /* Fondo semitransparente */
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        /* Estilos del botón */
+        .login-button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the main page of your application.</p>
-
-    <!-- Enlace de Logout -->
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-
-    <!-- Puedes agregar más contenido aquí -->
+    <div class="container">
+        <h1>Bienvenido a "BovinoMax"</h1>
+        <p>BovinoMax, una empresa dedicada a la producción ganadera, ha identificado que la falta 
+           de un sistema eficiente de gestión de recursos está generando pérdidas económicas debido 
+           al uso inadecuado de insumos como el alimento y el agua.
+        </p>
+        <div class="button-container">
+            <!-- Botón de login como enlace -->
+            <a href="{% url 'login' %}" class="login-button">Login</a>
+        </div>
+    </div>
+    <footer>
+        © Taller de Grado, 2/2024
+    </footer>
 </body>
 </html>
